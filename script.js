@@ -62,7 +62,7 @@ function generateTetromino() {
         name,
         matrix,
         row: 0,
-        column: PLAYFIELD_COLLUMMNS/2-1
+        column: PLAYFIELD_COLLUMMNS / 2 - 1
     }
 }
 
