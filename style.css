@@ -49,3 +49,7 @@ body {
 .grid .Z {
     background-color: rgba(128, 12, 99, 0.887);
 }
+
+.grid .L {
+    background-color: rgba(188, 174, 20, 0.887);
+}

@@ -1,7 +1,7 @@
 const PLAYFIELD_COLLUMMNS = 10;
 const PLAYFIELD_ROWS = 20;
 const TETROMINO_NAMES = [
-    'O', 'J', 'T', 'I', 'S', 'Z'
+    'O', 'J', 'T', 'I', 'S', 'Z', 'L'
 ];
 
 const TETROMINOES = {
@@ -27,12 +27,17 @@ const TETROMINOES = {
     'S': [
         [0, 1, 1],
         [1, 1, 0],
-        [0, 0, 0]
+        [0, 0, 0],
     ],
     'Z': [
         [1, 1, 0],
         [0, 1, 1],
         [0, 0, 0]
+    ],
+    'L': [
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 1]
     ]
 
 }
@@ -55,15 +60,17 @@ function generatePlayField() {
 }
 
 function generateTetromino() {
-
-    const name = TETROMINO_NAMES[Math.floor(Math.random() * TETROMINO_NAMES.length)];
+    const index = Math.floor(Math.random() * TETROMINO_NAMES.length);
+    const name = TETROMINO_NAMES[index];
     const matrix = TETROMINOES[name];
+
     tetromino = {
         name,
         matrix,
         row: 0,
-        column: PLAYFIELD_COLLUMMNS / 2 - 1
-    }
+        column: Math.floor((PLAYFIELD_COLLUMMNS - matrix[0].length) / 2),
+    };
+
 }
 
 generateTetromino();
